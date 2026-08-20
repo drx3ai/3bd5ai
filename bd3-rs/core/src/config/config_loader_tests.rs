@@ -1520,7 +1520,7 @@ allowed_approval_policies = ["on-request"]
             candidate: "Never".into(),
             allowed: "[OnRequest]".into(),
             requirement_source: RequirementSource::MdmManagedPreferences {
-                domain: "com.openai.3bd".to_string(),
+                domain: "com.3bd5ai.app".to_string(),
                 key: "requirements_toml_base64".to_string(),
             },
         })

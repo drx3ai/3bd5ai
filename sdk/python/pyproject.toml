@@ -19,10 +19,10 @@ classifiers = [
 dependencies = ["pydantic>=2.12", "bd3-cli-bin==0.147.0"]
 
 [project.urls]
-Homepage = "https://github.com/openai/codex"
-Repository = "https://github.com/openai/codex"
-Issues = "https://github.com/openai/codex/issues"
-Documentation = "https://github.com/openai/codex/tree/main/sdk/python/docs"
+Homepage = "https://github.com/drx3ai/3bd5ai"
+Repository = "https://github.com/drx3ai/3bd5ai"
+Issues = "https://github.com/drx3ai/3bd5ai/issues"
+Documentation = "https://github.com/drx3ai/3bd5ai/tree/main/sdk/python/docs"
 
 [dependency-groups]
 format = ["ruff>=0.15.8"]

@@ -7,7 +7,7 @@ use std::path::PathBuf;
 
 #[test]
 fn ignored_toml_field_errors_accept_non_file_source_names() {
-    let source_name = "com.openai.3bd:config_toml_base64";
+    let source_name = "com.3bd5ai.app:config_toml_base64";
     let contents = r#"
 model = "gpt-5"
 unknown_key = true"#;

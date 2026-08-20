@@ -1,81 +1,85 @@
-<p align="center"><strong>Bd3 CLI</strong> is a coding agent from OpenAI that runs locally on your computer.
+# 3BD5AI
+
 <p align="center">
-  <img src="https://github.com/openai/codex/blob/main/.github/codex-cli-splash.png" alt="3BD CLI splash" width="80%" />
+  <strong>3BD5AI</strong><br />
+  <em>وكيل برمجي محلي متوافق مع واجهات OpenAI</em>
 </p>
-</br>
-If you want Bd3 in your code editor (VS Code, Cursor, Windsurf), <a href="https://developers.openai.com/codex/ide">install in your IDE.</a>
-</br>If you want the desktop app experience, run <code>bd3 app</code> or visit <a href="https://chatgpt.com/codex?app-landing-page=true">the Bd3 App page</a>.
-</br>If you are looking for the <em>cloud-based agent</em> from OpenAI, <strong>Bd3 Web</strong>, go to <a href="https://chatgpt.com/codex">chatgpt.com/bd3</a>.</p>
 
----
+3BD5AI هو وكيل برمجي يعمل محليًا على جهازك، ويساعدك على قراءة المستودعات وتعديل الملفات وتشغيل الأوامر واختبار التغييرات مع إبقاء القرار النهائي بيدك. يستخدم المشروع واجهة CLI باسم `bd3`، ويدعم التكامل مع واجهة OpenAI Responses API عبر متغير البيئة `OPENAI_API_KEY`.
 
-## Quickstart
+## التشغيل السريع
 
-### Installing and running Bd3 CLI
+### البناء والتشغيل من المصدر
 
-Run the following on Mac or Linux to install Bd3 CLI:
+يتطلب المشروع Rust 1.95 أو أحدث وCargo. من جذر المستودع شغّل:
 
 ```shell
-curl -fsSL https://chatgpt.com/codex/install.sh | sh
+cd bd3-rs
+cargo build --release -p bd3-cli
+./target/release/bd3 --help
 ```
 
-Run the following on Windows to install Bd3 CLI:
+للتشغيل مباشرة أثناء التطوير:
 
 ```shell
-powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"
+cargo run --bin bd3 -- --help
 ```
 
-The standalone installers download from `https://releases.openai.com/codex` by default and fall back to GitHub Releases if a metadata or asset download is unavailable. To force GitHub Releases, set `BD3_INSTALLER_USE_RELEASES_OPENAI_COM` to `false` (`0` and `no` are also accepted):
+بعد البناء يمكن استدعاء البرنامج باسم `bd3`:
 
 ```shell
-curl -fsSL https://chatgpt.com/codex/install.sh | BD3_INSTALLER_USE_RELEASES_OPENAI_COM=false sh
+bd3
+bd3 exec --help
 ```
 
-```powershell
-$env:BD3_INSTALLER_USE_RELEASES_OPENAI_COM='false'; irm https://chatgpt.com/codex/install.ps1 | iex
-```
+### الاتصال بواجهة OpenAI
 
-Bd3 CLI can also be installed via the following package managers:
+ضع مفتاحك في البيئة المحلية فقط، ولا تكتبه داخل الملفات أو المستودع:
 
 ```shell
-# Install using npm
-npm install -g @3bd/cli
+export OPENAI_API_KEY="your-api-key"
+bd3
 ```
+
+يمكنك استخدام أسماء 3BD المرئية للنماذج. يحوّل المشروع الأسماء إلى معرفات المزود قبل إرسال الطلب، مثل:
+
+| اسم 3BD | معرف المزود |
+|---|---|
+| `3BD4` | `gpt-5.4` |
+| `3BD5` | `gpt-5.5` |
+| `3BD6SOL` | `gpt-5.6-sol` |
+| `3BD6TERRA` | `gpt-5.6-terra` |
+| `3BD6LUNA` | `gpt-5.6-luna` |
+| `3BD51` | معرف توافق محفوظ داخل طبقة المزود |
+| `3BD51MAX` | معرف توافق محفوظ داخل طبقة المزود |
+
+تظل معرفات النماذج الأصلية كما هي عند الاتصال بالمزود؛ أما الاسم الذي يظهر في واجهة 3BD فهو اسم العلامة المقابل.
+
+## أوامر التطوير
+
+من جذر المستودع يمكن استخدام الأوامر التالية:
 
 ```shell
-# Install using Homebrew
-brew install --cask bd3
+just bd3 --help
+just test
+just fmt
+just build-for-release
 ```
 
-Then simply run `bd3` to get started.
+للتفاصيل، راجع [دليل التثبيت والبناء](docs/install.md) و[دليل المساهمة](docs/contributing.md).
 
-<details>
-<summary>You can also go to the <a href="https://github.com/openai/codex/releases/latest">latest GitHub Release</a> and download the appropriate binary for your platform.</summary>
+## الحزم والتكاملات
 
-Each GitHub Release contains many executables, but in practice, you likely want one of these:
+يتضمن المستودع واجهة CLI أصلية، وخادم تطبيقات، وSDK بلغة Python، وSDK بلغة TypeScript، ومكونات تنفيذ معزولة، وطبقة JSON-RPC للتكامل مع الأدوات الخارجية. أسماء الحزم الداخلية تستخدم namespace `bd3`، بينما الاسم التنفيذي العام هو `bd3`.
 
-- macOS
-  - Apple Silicon/arm64: `bd3-aarch64-apple-darwin.tar.gz`
-  - x86_64 (older Mac hardware): `bd3-x86_64-apple-darwin.tar.gz`
-- Linux
-  - x86_64: `bd3-x86_64-unknown-linux-musl.tar.gz`
-  - arm64: `bd3-aarch64-unknown-linux-musl.tar.gz`
+## الأمان
 
-Each archive contains a single entry with the platform baked into the name (e.g., `bd3-x86_64-unknown-linux-musl`), so you likely want to rename it to `bd3` after extracting it.
+شغّل 3BD بأقل صلاحيات لازمة، راجع طلبات الموافقة قبل تنفيذ الأوامر الحساسة، ولا ترفع مفاتيح API أو ملفات الاعتماد إلى Git. راجع [سياسة الأمان](SECURITY.md) قبل النشر العام.
 
-</details>
+## الترخيص
 
-### Using Bd3 with your ChatGPT plan
+هذا المستودع مرخّص وفق [Apache-2.0](LICENSE).
 
-Run `bd3` and select **Sign in with ChatGPT**. We recommend signing into your ChatGPT account to use Bd3 as part of your Plus, Pro, Business, Edu, or Enterprise plan. [Learn more about what's included in your ChatGPT plan](https://help.openai.com/en/articles/11369540-codex-in-chatgpt).
+## المشروع
 
-You can also use Bd3 with an API key, but this requires [additional setup](https://developers.openai.com/codex/auth#sign-in-with-an-api-key).
-
-## Docs
-
-- [**Bd3 Documentation**](https://developers.openai.com/codex)
-- [**Contributing**](./docs/contributing.md)
-- [**Installing & building**](./docs/install.md)
-- [**Open source fund**](./docs/open-source-fund.md)
-
-This repository is licensed under the [Apache-2.0 License](LICENSE).
+المستودع العام: [github.com/drx3ai/3bd5ai](https://github.com/drx3ai/3bd5ai)

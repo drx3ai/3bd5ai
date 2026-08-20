@@ -1545,7 +1545,7 @@ mod tests {
         );
         assert_eq!(
             super::hook_metadata_for_config_layer_source(&ConfigLayerSource::Mdm {
-                domain: "com.openai.3bd".to_string(),
+                domain: "com.3bd5ai.app".to_string(),
                 key: "config".to_string(),
             }),
             (HookSource::Mdm, true),

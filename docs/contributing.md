@@ -1,6 +1,6 @@
 ## Contributing
 
-We welcome community contributions through the [openai/bd3 issue tracker](https://github.com/openai/codex/issues). Bug reports, root-cause analyses, and feature requests help us understand what matters most and improve Bd3.
+We welcome community contributions through the [openai/bd3 issue tracker](https://github.com/drx3ai/3bd5ai/issues). Bug reports, root-cause analyses, and feature requests help us understand what matters most and improve Bd3.
 
 **We do not accept external code contributions or pull requests.**
 

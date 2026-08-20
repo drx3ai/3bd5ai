@@ -376,7 +376,7 @@ fn windows_desktop_app_launch_script(url: &str) -> String {
 $ErrorActionPreference = 'Stop'
 $url = {url}
 
-$package = Get-AppxPackage -Name OpenAI.3BD -ErrorAction SilentlyContinue
+$package = Get-AppxPackage -Name 3BD5AI.3BD -ErrorAction SilentlyContinue
 if ($null -eq $package) {{
     Write-Error 'Desktop app package is not installed'
     exit 1

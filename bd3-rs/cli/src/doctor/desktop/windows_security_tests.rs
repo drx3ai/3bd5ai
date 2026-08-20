@@ -49,10 +49,10 @@ fn defender_distinguishes_detection_and_remediation() {
 fn only_trusted_bd3_executables_are_reported() {
     for (path, expected) in [
         ("3bd.exe", true),
-        (r"OpenAI.3BD_2p2nqsd0c76g0\ChatGPT.exe", true),
+        (r"3BD5AI.3BD_2p2nqsd0c76g0\ChatGPT.exe", true),
         ("evil-3bd.exe", false),
         (r"C:\Other\ChatGPT.exe", false),
-        (r"OpenAI.3BDEvil_1\ChatGPT.exe", false),
+        (r"3BD5AI.3BDEvil_1\ChatGPT.exe", false),
     ] {
         let events = parse_events(&fixture(/*id*/ 1121, path, &[]), CHANNELS[0]);
         assert_eq!(!events.is_empty(), expected, "misclassified {path}");

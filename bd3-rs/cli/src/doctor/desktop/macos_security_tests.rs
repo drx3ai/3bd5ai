@@ -11,7 +11,7 @@ use std::process::Output;
 #[test]
 fn only_matching_enforced_apple_security_events_are_failures() {
     for (event, expected) in [
-        ("denied com.openai.3bd", Evidence::Blocked),
+        ("denied com.3bd5ai.app", Evidence::Blocked),
         (
             "denied /Applications/3BD.app/Contents/MacOS/3BD",
             Evidence::Blocked,

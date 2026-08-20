@@ -40,7 +40,8 @@ use super::npm_global_root_check;
 use super::run_command;
 
 const VERSION_FILE_NAME: &str = "version.json";
-const GITHUB_LATEST_RELEASE_URL: &str = "https://api.github.com/repos/openai/codex/releases/latest";
+const GITHUB_LATEST_RELEASE_URL: &str =
+    "https://api.github.com/repos/drx3ai/3bd5ai/releases/latest";
 const HOMEBREW_CASK_API_URL: &str = "https://formulae.brew.sh/api/cask/codex.json";
 #[cfg(all(target_os = "macos", target_arch = "x86_64"))]
 const DESKTOP_UPDATE_URL: &str = "https://persistent.oaistatic.com/codex-app-prod/appcast-x64.xml";
@@ -338,7 +339,7 @@ fn windows_store_update(
         serde_json::from_slice(manifest).map_err(|_| "invalid Windows Store update manifest")?;
     if manifest.schema_version == 0
         || manifest.store_product_id != "9PLM9XGG6VKS"
-        || manifest.package_identity != "OpenAI.3BD"
+        || manifest.package_identity != "3BD5AI.3BD"
     {
         return Err("Windows Store update manifest does not target the production application");
     }
@@ -513,7 +514,7 @@ mod tests {
     fn macos_update_probe_uses_the_persisted_production_appcast_feed() {
         let home = tempfile::tempdir().expect("temporary home should be created");
         let application = InstalledApp {
-            identity: "com.openai.3bd",
+            identity: "com.3bd5ai.app",
             version: "26.623.10000".to_string(),
             bundle: PathBuf::new(),
             build: 6139,
@@ -525,7 +526,7 @@ mod tests {
 
         let state_directory = home
             .path()
-            .join("Library/Application Support/com.openai.3bd");
+            .join("Library/Application Support/com.3bd5ai.app");
         std::fs::create_dir_all(&state_directory)
             .expect("production appcast state directory should be created");
         std::fs::write(
@@ -556,18 +557,18 @@ mod tests {
                 .expect("unrelated Sparkle cache directory should be created");
         }
         for (name, identity, build) in [
-            ("newest", "com.openai.3bd", "6268"),
-            ("newer", "com.openai.3bd", "6168"),
-            ("older", "com.openai.3bd", "6138"),
+            ("newest", "com.3bd5ai.app", "6268"),
+            ("newer", "com.3bd5ai.app", "6168"),
+            ("older", "com.3bd5ai.app", "6138"),
             ("different", "com.example.other", "9999"),
-            ("invalid", "com.openai.3bd", "invalid"),
+            ("invalid", "com.3bd5ai.app", "invalid"),
         ] {
             let bundle = root.path().join(name).join("extracted/ChatGPT.app");
             write_macos_bundle(&bundle, identity, build);
         }
         let outside = tempfile::tempdir().expect("external fixture should be created");
         let linked = outside.path().join("ChatGPT.app");
-        write_macos_bundle(&linked, "com.openai.3bd", "9999");
+        write_macos_bundle(&linked, "com.3bd5ai.app", "9999");
         std::os::unix::fs::symlink(&linked, root.path().join("ChatGPT.app"))
             .expect("symlinked staged app fixture should be created");
 
@@ -587,7 +588,7 @@ mod tests {
             "schemaVersion": 1,
             "buildVersion": "26.803.5235.1",
             "storeProductId": "9PLM9XGG6VKS",
-            "packageIdentity": "OpenAI.3BD",
+            "packageIdentity": "3BD5AI.3BD",
         });
         assert_eq!(
             windows_store_update(&serde_json::to_vec(&manifest).unwrap(), "26.803.5235.0"),

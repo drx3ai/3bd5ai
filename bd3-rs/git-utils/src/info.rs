@@ -894,10 +894,17 @@ mod tests {
             "https://github.com:443/openai/codex.git",
             "https://token@github.com/openai/codex/",
             "github.com/OpenAI/Codex.git",
+            "git@github.com:drx3ai/3bd5ai.git",
+            "https://github.com/drx3ai/3bd5ai.git",
         ] {
+            let expected = if remote.to_ascii_lowercase().contains("drx3ai/3bd5ai") {
+                "github.com/drx3ai/3bd5ai"
+            } else {
+                "github.com/openai/codex"
+            };
             assert_eq!(
                 canonicalize_git_remote_url(remote),
-                Some("github.com/openai/codex".to_string())
+                Some(expected.to_string())
             );
         }
     }
