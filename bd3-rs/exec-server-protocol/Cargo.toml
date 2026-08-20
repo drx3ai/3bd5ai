@@ -1,0 +1,26 @@
+[package]
+name = "bd3-exec-server-protocol"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+name = "bd3_exec_server_protocol"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+base64 = { workspace = true }
+bd3-file-system = { workspace = true }
+bd3-network-proxy = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-shell-command = { workspace = true }
+bd3-utils-path-uri = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true, features = ["arbitrary_precision", "raw_value"] }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }

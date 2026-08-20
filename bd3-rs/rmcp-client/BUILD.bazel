@@ -1,0 +1,9 @@
+load("//:defs.bzl", "bd3_rust_crate")
+
+bd3_rust_crate(
+    name = "rmcp-client",
+    crate_name = "bd3_rmcp_client",
+    extra_binaries = [
+        "//bd3-rs/cli:3bd",
+    ],
+)

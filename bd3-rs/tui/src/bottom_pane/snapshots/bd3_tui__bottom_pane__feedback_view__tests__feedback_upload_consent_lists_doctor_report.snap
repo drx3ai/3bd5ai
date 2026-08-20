@@ -1,0 +1,14 @@
+---
+source: tui/src/bottom_pane/feedback_view.rs
+assertion_line: 728
+expression: rendered
+---
+Upload logs?
+
+The following files will be sent:
+  • bd3-logs.log
+  • bd3-doctor-report.json
+  • bd3-apps-tools-cache.json (if available)
+  • bd3-app-directory-cache.json (if available)
+  • rollout.jsonl
+  • auto-review-rollout.jsonl

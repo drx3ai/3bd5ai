@@ -1,0 +1,6 @@
+load("//:defs.bzl", "bd3_rust_crate")
+
+bd3_rust_crate(
+    name = "bd3-backend-openapi-models",
+    crate_name = "bd3_backend_openapi_models",
+)

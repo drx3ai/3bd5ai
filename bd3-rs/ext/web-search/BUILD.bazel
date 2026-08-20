@@ -1,0 +1,9 @@
+load("//:defs.bzl", "bd3_rust_crate")
+
+bd3_rust_crate(
+    name = "web-search",
+    compile_data = [
+        "web_run_description.md",
+    ],
+    crate_name = "bd3_web_search_extension",
+)

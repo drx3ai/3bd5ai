@@ -1,0 +1,33 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "bd3-core-api"
+version.workspace = true
+
+[lib]
+doctest = false
+name = "bd3_core_api"
+path = "src/lib.rs"
+test = false
+
+[lints]
+workspace = true
+
+[dependencies]
+bd3-app-server-protocol = { workspace = true }
+bd3-arg0 = { workspace = true }
+bd3-analytics = { workspace = true }
+bd3-config = { workspace = true }
+bd3-core = { workspace = true }
+bd3-extension-api = { workspace = true }
+bd3-home = { workspace = true }
+bd3-history = { workspace = true }
+bd3-image-generation-extension = { workspace = true }
+bd3-exec-server = { workspace = true }
+bd3-features = { workspace = true }
+bd3-login = { workspace = true }
+bd3-model-provider-info = { workspace = true }
+bd3-models-manager = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-state = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }

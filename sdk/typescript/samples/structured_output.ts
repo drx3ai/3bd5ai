@@ -1,0 +1,22 @@
+#!/usr/bin/env -S NODE_NO_WARNINGS=1 pnpm ts-node-esm --files
+
+import { Bd3 } from "@3bd/sdk";
+
+import { bd3PathOverride } from "./helpers.ts";
+
+const bd3 = new Bd3({ bd3PathOverride: bd3PathOverride() });
+
+const thread = bd3.startThread();
+
+const schema = {
+  type: "object",
+  properties: {
+    summary: { type: "string" },
+    status: { type: "string", enum: ["ok", "action_required"] },
+  },
+  required: ["summary", "status"],
+  additionalProperties: false,
+} as const;
+
+const turn = await thread.run("Summarize repository status", { outputSchema: schema });
+console.log(turn.finalResponse);

@@ -1,0 +1,17 @@
+[package]
+name = "bd3-exec-server-test-support"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+path = "lib.rs"
+test = false
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+bd3-exec-server = { workspace = true }
+bd3-http-client = { workspace = true }

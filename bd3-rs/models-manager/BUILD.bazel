@@ -1,0 +1,10 @@
+load("//:defs.bzl", "bd3_rust_crate")
+
+bd3_rust_crate(
+    name = "models-manager",
+    compile_data = [
+        "models.json",
+        "prompt.md",
+    ],
+    crate_name = "bd3_models_manager",
+)

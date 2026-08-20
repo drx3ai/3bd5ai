@@ -1,0 +1,7 @@
+load("//:defs.bzl", "bd3_rust_crate")
+
+bd3_rust_crate(
+    name = "bd3-experimental-api-macros",
+    crate_name = "bd3_experimental_api_macros",
+    proc_macro = True,
+)

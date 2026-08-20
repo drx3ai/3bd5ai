@@ -1,0 +1,27 @@
+[package]
+name = "bd3-lmstudio"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+name = "bd3_lmstudio"
+path = "src/lib.rs"
+doctest = false
+
+
+[dependencies]
+bd3-core = { path = "../core" }
+bd3-http-client = { workspace = true }
+bd3-model-provider-info = { path = "../model-provider-info" }
+serde_json = "1"
+tokio = { version = "1", features = ["rt"] }
+tracing = { version = "0.1.44", features = ["log"] }
+which = "8.0"
+
+[dev-dependencies]
+wiremock = "0.6"
+tokio = { version = "1", features = ["full"] }
+
+[lints]
+workspace = true

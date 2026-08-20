@@ -1,0 +1,19 @@
+[package]
+name = "bd3-terminal-detection"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+name = "bd3_terminal_detection"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+tracing = { workspace = true }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }

@@ -1,0 +1,146 @@
+[package]
+name = "bd3-app-server"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "bd3-app-server"
+path = "src/main.rs"
+
+[[bin]]
+name = "bd3-app-server-test-notify-capture"
+path = "src/bin/notify_capture.rs"
+
+[[bin]]
+name = "exec-server"
+path = "src/bin/exec_server.rs"
+
+[lib]
+name = "bd3_app_server"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+base64 = { workspace = true }
+axum = { workspace = true, default-features = false, features = [
+    "http1",
+    "json",
+    "tokio",
+    "ws",
+] }
+bd3-analytics = { workspace = true }
+bd3-agent-extension = { workspace = true }
+bd3-arg0 = { workspace = true }
+bd3-cloud-config = { workspace = true }
+bd3-code-mode = { workspace = true }
+bd3-config = { workspace = true }
+bd3-connectors = { workspace = true }
+bd3-core = { workspace = true }
+bd3-core-plugins = { workspace = true }
+bd3-diagnostics = { workspace = true }
+bd3-home = { workspace = true }
+bd3-exec-server = { workspace = true }
+bd3-extension-api = { workspace = true }
+bd3-external-agent-migration = { workspace = true }
+bd3-features = { workspace = true }
+bd3-goal-extension = { workspace = true }
+bd3-git-attribution = { workspace = true }
+bd3-guardian-v2 = { workspace = true }
+bd3-git-utils = { workspace = true }
+bd3-file-watcher = { workspace = true }
+bd3-hooks = { workspace = true }
+bd3-http-client = { workspace = true }
+bd3-otel = { workspace = true }
+bd3-plugin = { workspace = true }
+bd3-shell-command = { workspace = true }
+bd3-skills = { workspace = true }
+bd3-skills-extension = { workspace = true }
+bd3-utils-cli = { workspace = true }
+bd3-utils-pty = { workspace = true }
+bd3-backend-client = { workspace = true }
+bd3-file-search = { workspace = true }
+bd3-chatgpt = { workspace = true }
+bd3-login = { workspace = true }
+bd3-image-generation-extension = { workspace = true }
+bd3-memories-extension = { workspace = true }
+bd3-web-search-extension = { workspace = true }
+bd3-memories-write = { workspace = true }
+bd3-mcp = { workspace = true }
+bd3-mcp-extension = { workspace = true }
+bd3-model-provider = { workspace = true }
+bd3-models-manager = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-queue-extension = { workspace = true }
+bd3-app-server-protocol = { workspace = true }
+bd3-app-server-transport = { workspace = true }
+bd3-feedback = { workspace = true }
+bd3-rmcp-client = { workspace = true }
+bd3-rollout = { workspace = true }
+bd3-sandboxing = { workspace = true }
+bd3-state = { workspace = true }
+bd3-thread-store = { workspace = true }
+bd3-tools = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }
+bd3-utils-json-to-toml = { workspace = true }
+bd3-utils-path-uri = { workspace = true }
+chrono = { workspace = true }
+clap = { workspace = true, features = ["derive"] }
+futures = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+tempfile = { workspace = true }
+thiserror = { workspace = true }
+time = { workspace = true }
+toml = { workspace = true }
+toml_edit = { workspace = true }
+tokio = { workspace = true, features = [
+    "io-std",
+    "macros",
+    "process",
+    "rt-multi-thread",
+    "signal",
+] }
+tokio-util = { workspace = true }
+tracing = { workspace = true, features = ["log"] }
+tracing-subscriber = { workspace = true, features = ["env-filter", "fmt", "json"] }
+url = { workspace = true }
+uuid = { workspace = true, features = ["serde", "v7"] }
+
+[target.'cfg(windows)'.dependencies]
+bd3-windows-sandbox = { workspace = true }
+
+[dev-dependencies]
+app_test_support = { workspace = true }
+axum = { workspace = true, default-features = false, features = [
+    "http1",
+    "json",
+    "tokio",
+] }
+base64 = { workspace = true }
+bd3-model-provider-info = { workspace = true }
+bd3-utils-cargo-bin = { workspace = true }
+core_test_support = { workspace = true }
+flate2 = { workspace = true }
+hmac = { workspace = true }
+http = { workspace = true }
+opentelemetry = { workspace = true }
+opentelemetry_sdk = { workspace = true }
+pretty_assertions = { workspace = true }
+rmcp = { workspace = true, default-features = false, features = [
+    "elicitation",
+    "server",
+    "transport-streamable-http-server",
+] }
+serial_test = { workspace = true }
+shlex = { workspace = true }
+tar = { workspace = true }
+test-case = "3.3.1"
+tokio-tungstenite = { workspace = true }
+tracing-opentelemetry = { workspace = true }
+wiremock = { workspace = true }

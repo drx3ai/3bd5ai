@@ -1,0 +1,49 @@
+[package]
+name = "app_test_support"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+path = "lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+base64 = { workspace = true }
+chrono = { workspace = true }
+bd3-app-server-protocol = { workspace = true }
+bd3-config = { workspace = true }
+bd3-core = { workspace = true }
+bd3-exec-server = { workspace = true }
+bd3-features = { workspace = true }
+bd3-login = { workspace = true }
+bd3-models-manager = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-utils-cargo-bin = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tempfile = { workspace = true }
+tokio = { workspace = true, features = [
+    "io-util",
+    "io-std",
+    "macros",
+    "net",
+    "process",
+    "rt-multi-thread",
+    "sync",
+    "test-util",
+    "time",
+] }
+tokio-util = { workspace = true }
+url = { workspace = true }
+uuid = { workspace = true }
+wiremock = { workspace = true }
+core_test_support = { path = "../../../core/tests/common" }
+shlex = { workspace = true }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }

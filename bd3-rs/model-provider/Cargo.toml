@@ -1,0 +1,35 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "bd3-model-provider"
+version.workspace = true
+
+[lib]
+doctest = false
+name = "bd3_model_provider"
+path = "src/lib.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+bd3-api = { workspace = true }
+bd3-agent-identity = { workspace = true }
+bd3-aws-auth = { workspace = true }
+bd3-http-client = { workspace = true }
+bd3-feedback = { workspace = true }
+bd3-login = { workspace = true }
+bd3-model-provider-info = { workspace = true }
+bd3-models-manager = { workspace = true }
+bd3-otel = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-response-debug-context = { workspace = true }
+http = { workspace = true }
+tokio = { workspace = true, features = ["process", "sync", "time"] }
+tracing = { workspace = true, features = ["log"] }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true, features = ["macros", "rt"] }
+wiremock = { workspace = true }

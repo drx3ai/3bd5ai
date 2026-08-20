@@ -1,0 +1,42 @@
+[package]
+name = "bd3-external-agent-migration"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+doctest = false
+name = "bd3_external_agent_migration"
+path = "src/lib.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+chrono = { workspace = true }
+bd3-analytics = { workspace = true }
+bd3-config = { workspace = true }
+bd3-core = { workspace = true }
+bd3-core-plugins = { workspace = true }
+bd3-hooks = { workspace = true }
+bd3-login = { workspace = true }
+bd3-memories-write = { workspace = true }
+bd3-otel = { workspace = true }
+bd3-plugin = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-rollout = { workspace = true }
+bd3-thread-store = { workspace = true }
+bd3-utils-output-truncation = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+serde_yaml = { workspace = true }
+sha2 = { workspace = true }
+toml = { workspace = true }
+tokio = { workspace = true, features = ["rt", "sync"] }
+tracing = { workspace = true }
+
+[dev-dependencies]
+bd3-app-server-protocol = { workspace = true }
+pretty_assertions = { workspace = true }
+tempfile = { workspace = true }
+tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }

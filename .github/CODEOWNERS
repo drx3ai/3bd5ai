@@ -1,0 +1,17 @@
+# Core crate ownership.
+/bd3-rs/arg0/ @3bd/cli-core-agent-team
+/bd3-rs/bd3-mcp/ @3bd/cli-core-agent-team
+/bd3-rs/core/ @3bd/cli-core-agent-team
+/bd3-rs/exec-server/ @3bd/cli-core-agent-team
+/bd3-rs/exec-server-protocol/ @3bd/cli-core-agent-team
+/bd3-rs/ext/extension-api/ @3bd/cli-core-agent-team
+/bd3-rs/prompts/ @3bd/cli-core-agent-team
+/bd3-rs/utils/path-uri/ @3bd/cli-core-agent-team
+
+# Keep macOS AKV signing changes reviewed by Bd3 maintainers.
+/.github/actions/setup-akv-pkcs11-codesigning/ @3bd/cli-core-agent-team
+/.github/scripts/macos-signing/ @3bd/cli-core-agent-team
+/.github/workflows/rust-release.yml @3bd/cli-core-agent-team
+
+# Keep ownership changes reviewed by the same team.
+/.github/CODEOWNERS @3bd/cli-core-agent-team

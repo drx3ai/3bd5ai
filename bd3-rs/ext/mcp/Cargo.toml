@@ -1,0 +1,38 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "bd3-mcp-extension"
+version.workspace = true
+
+[lib]
+name = "bd3_mcp_extension"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+bd3-core = { workspace = true }
+bd3-core-plugins = { workspace = true }
+bd3-config = { workspace = true }
+bd3-connectors = { workspace = true }
+bd3-connectors-extension = { workspace = true }
+bd3-exec-server = { workspace = true }
+bd3-extension-api = { workspace = true }
+bd3-features = { workspace = true }
+bd3-mcp = { workspace = true }
+bd3-plugin = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }
+bd3-utils-path-uri = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+tokio = { workspace = true, features = ["sync"] }
+
+[dev-dependencies]
+bd3-login = { workspace = true }
+pretty_assertions = { workspace = true }
+tempfile = { workspace = true }
+tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }

@@ -1,0 +1,29 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "bd3-extension-api"
+version.workspace = true
+
+[lib]
+name = "bd3_extension_api"
+path = "src/lib.rs"
+test = false
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+bd3-config = { workspace = true }
+bd3-context-fragments = { workspace = true }
+bd3-exec-server-protocol = { workspace = true }
+bd3-mcp = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-tools = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }
+bd3-utils-path-uri = { workspace = true }
+serde_json = { workspace = true }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }
+tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }

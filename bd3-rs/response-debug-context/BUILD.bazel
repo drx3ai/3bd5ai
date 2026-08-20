@@ -1,0 +1,6 @@
+load("//:defs.bzl", "bd3_rust_crate")
+
+bd3_rust_crate(
+    name = "response-debug-context",
+    crate_name = "bd3_response_debug_context",
+)

@@ -1,0 +1,32 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "bd3-web-search-extension"
+version.workspace = true
+
+[lib]
+name = "bd3_web_search_extension"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+bd3-api = { workspace = true }
+bd3-core = { workspace = true }
+bd3-extension-api = { workspace = true }
+bd3-extension-items = { workspace = true }
+bd3-login = { workspace = true }
+bd3-model-provider = { workspace = true }
+bd3-model-provider-info = { workspace = true }
+bd3-otel = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-tools = { workspace = true }
+http = { workspace = true }
+schemars = { workspace = true }
+serde_json = { workspace = true }
+url = { workspace = true }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }

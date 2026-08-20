@@ -1,0 +1,25 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "bd3-prompts"
+version.workspace = true
+
+[lib]
+doctest = false
+name = "bd3_prompts"
+path = "src/lib.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+bd3-context-fragments = { workspace = true }
+bd3-git-utils = { workspace = true }
+bd3-execpolicy = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }
+bd3-utils-template = { workspace = true }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }

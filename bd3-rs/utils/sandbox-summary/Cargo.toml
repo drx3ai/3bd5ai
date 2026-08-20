@@ -1,0 +1,19 @@
+[package]
+name = "bd3-utils-sandbox-summary"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+bd3-protocol = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }
+
+[dev-dependencies]
+bd3-utils-absolute-path = { workspace = true }
+pretty_assertions = { workspace = true }
+
+[lib]
+doctest = false

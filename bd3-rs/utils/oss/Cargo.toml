@@ -1,0 +1,17 @@
+[package]
+name = "bd3-utils-oss"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+bd3-core = { workspace = true }
+bd3-lmstudio = { workspace = true }
+bd3-model-provider-info = { workspace = true }
+bd3-ollama = { workspace = true }
+
+[lib]
+doctest = false

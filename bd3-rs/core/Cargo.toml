@@ -1,0 +1,174 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "bd3-core"
+version.workspace = true
+
+[lib]
+name = "bd3_core"
+path = "src/lib.rs"
+
+[[bin]]
+name = "bd3-write-config-schema"
+path = "src/bin/config_schema.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+arc-swap = { workspace = true }
+async-channel = { workspace = true }
+base64 = { workspace = true }
+bm25 = { workspace = true }
+chrono = { workspace = true, features = ["serde"] }
+clap = { workspace = true, features = ["derive"] }
+bd3-analytics = { workspace = true }
+bd3-agent-graph-store = { workspace = true }
+bd3-api = { workspace = true }
+bd3-app-server-protocol = { workspace = true }
+bd3-apply-patch = { workspace = true }
+bd3-async-utils = { workspace = true }
+bd3-client = { workspace = true }
+bd3-code-mode = { workspace = true }
+bd3-connectors = { workspace = true }
+bd3-context-fragments = { workspace = true }
+bd3-config = { workspace = true }
+bd3-core-plugins = { workspace = true }
+bd3-diagnostics = { workspace = true }
+bd3-exec-server = { workspace = true }
+bd3-extension-api = { workspace = true }
+bd3-extension-items = { workspace = true }
+bd3-features = { workspace = true }
+bd3-feedback = { workspace = true }
+bd3-file-system = { workspace = true }
+bd3-login = { workspace = true }
+bd3-memories-read = { workspace = true }
+bd3-mcp = { workspace = true }
+bd3-model-provider-info = { workspace = true }
+bd3-models-manager = { workspace = true }
+bd3-shell-command = { workspace = true }
+bd3-execpolicy = { workspace = true }
+bd3-git-utils = { workspace = true }
+bd3-history = { workspace = true }
+bd3-hooks = { workspace = true }
+bd3-http-client = { workspace = true }
+bd3-install-context = { workspace = true }
+bd3-network-proxy = { workspace = true }
+bd3-otel = { workspace = true }
+bd3-plugin = { workspace = true }
+bd3-model-provider = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-response-debug-context = { workspace = true }
+bd3-prompts = { workspace = true }
+bd3-rollout = { workspace = true }
+bd3-rollout-trace = { workspace = true }
+bd3-rmcp-client = { workspace = true }
+bd3-sandboxing = { workspace = true }
+bd3-skills = { workspace = true }
+bd3-skills-extension = { workspace = true }
+bd3-state = { workspace = true }
+bd3-terminal-detection = { workspace = true }
+bd3-thread-store = { workspace = true }
+bd3-tools = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }
+bd3-utils-audio = { workspace = true }
+bd3-utils-cache = { workspace = true }
+bd3-utils-image = { workspace = true }
+bd3-utils-home-dir = { workspace = true }
+bd3-utils-output-truncation = { workspace = true }
+bd3-utils-path = { workspace = true }
+bd3-utils-path-uri = { workspace = true }
+bd3-utils-plugins = { workspace = true }
+bd3-utils-pty = { workspace = true }
+bd3-utils-string = { workspace = true }
+bd3-utils-stream-parser = { workspace = true }
+bd3-windows-sandbox = { package = "bd3-windows-sandbox", path = "../windows-sandbox-rs" }
+dirs = { workspace = true }
+dunce = { workspace = true }
+eventsource-stream = { workspace = true }
+futures = { workspace = true }
+http = { workspace = true }
+iana-time-zone = { workspace = true }
+image = { workspace = true, features = ["jpeg", "png", "webp"] }
+indexmap = { workspace = true }
+libc = { workspace = true }
+once_cell = { workspace = true }
+rand = { workspace = true }
+regex-lite = { workspace = true }
+rmcp = { workspace = true, default-features = false, features = [
+    "base64",
+    "macros",
+    "schemars",
+    "server",
+] }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+sha1 = { workspace = true }
+shlex = { workspace = true }
+similar = { workspace = true }
+tempfile = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true, features = [
+    "io-std",
+    "macros",
+    "process",
+    "rt-multi-thread",
+    "signal",
+] }
+tokio-util = { workspace = true, features = ["rt"] }
+tokio-tungstenite = { workspace = true }
+toml = { workspace = true }
+toml_edit = { workspace = true }
+tracing = { workspace = true, features = ["log"] }
+url = { workspace = true }
+uuid = { workspace = true, features = ["serde", "v4", "v5", "v7"] }
+which = { workspace = true }
+whoami = { workspace = true }
+
+# Build OpenSSL from source for musl builds.
+[target.x86_64-unknown-linux-musl.dependencies]
+openssl-sys = { workspace = true, features = ["vendored"] }
+
+# Build OpenSSL from source for musl builds.
+[target.aarch64-unknown-linux-musl.dependencies]
+openssl-sys = { workspace = true, features = ["vendored"] }
+
+[target.'cfg(unix)'.dependencies]
+bd3-shell-escalation = { workspace = true }
+
+[dev-dependencies]
+assert_cmd = { workspace = true }
+assert_matches = { workspace = true }
+bd3-exec-server-test-support = { workspace = true }
+bd3-image-generation-extension = { workspace = true }
+bd3-home = { workspace = true }
+bd3-otel = { workspace = true }
+bd3-test-binary-support = { workspace = true }
+bd3-utils-cargo-bin = { workspace = true }
+bd3-web-search-extension = { workspace = true }
+core_test_support = { workspace = true }
+ctor = { workspace = true }
+insta = { workspace = true }
+maplit = { workspace = true }
+opentelemetry = { workspace = true }
+predicates = { workspace = true }
+pretty_assertions = { workspace = true }
+test-case = "3.3.1"
+opentelemetry_sdk = { workspace = true, features = [
+    "experimental_metrics_custom_reader",
+    "metrics",
+] }
+serial_test = { workspace = true }
+tempfile = { workspace = true }
+test-log = { workspace = true }
+tracing-opentelemetry = { workspace = true }
+tracing-subscriber = { workspace = true }
+tracing-test = { workspace = true, features = ["no-env-filter"] }
+walkdir = { workspace = true }
+wiremock = { workspace = true }
+zstd = { workspace = true }
+
+[package.metadata.cargo-shear]
+ignored = ["openssl-sys"]
+ignored-paths = ["tests/remote_env_windows/*.rs"]

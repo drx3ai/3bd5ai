@@ -1,0 +1,15 @@
+[package]
+name = "bd3-utils-approval-presets"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+bd3-protocol = { workspace = true }
+
+[lib]
+test = false
+doctest = false

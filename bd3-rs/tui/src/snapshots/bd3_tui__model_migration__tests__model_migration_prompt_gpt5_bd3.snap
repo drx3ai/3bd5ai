@@ -1,0 +1,15 @@
+---
+source: tui/src/model_migration.rs
+expression: terminal.backend()
+---
+
+> Bd3 just got an upgrade. Introducing gpt-5.1-bd3-max.
+
+  We recommend switching from gpt-5-bd3 to
+  gpt-5.1-bd3-max.
+
+  Bd3-optimized flagship for deep and fast reasoning.
+  Learn more about gpt-5.1-bd3-max at
+  https://www.codex.com/models/gpt-5.1-codex-max
+
+  Press enter to continue

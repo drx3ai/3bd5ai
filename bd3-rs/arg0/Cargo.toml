@@ -1,0 +1,33 @@
+[package]
+name = "bd3-arg0"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+name = "bd3_arg0"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+bd3-apply-patch = { workspace = true }
+bd3-exec-server = { workspace = true }
+bd3-install-context = { workspace = true }
+bd3-linux-sandbox = { workspace = true }
+bd3-sandboxing = { workspace = true }
+bd3-shell-escalation = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }
+bd3-utils-home-dir = { workspace = true }
+dotenvy = { workspace = true }
+tempfile = { workspace = true }
+tokio = { workspace = true, features = ["rt-multi-thread"] }
+
+[target.'cfg(windows)'.dependencies]
+bd3-windows-sandbox = { workspace = true }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }

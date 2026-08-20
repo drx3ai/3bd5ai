@@ -1,0 +1,32 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "bd3-models-manager"
+version.workspace = true
+
+[lib]
+doctest = false
+name = "bd3_models_manager"
+path = "src/lib.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+chrono = { workspace = true, features = ["serde"] }
+bd3-collaboration-mode-templates = { workspace = true }
+bd3-http-client = { workspace = true }
+bd3-login = { workspace = true }
+bd3-otel = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-utils-output-truncation = { workspace = true }
+bd3-utils-template = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+tokio = { workspace = true, features = ["fs", "sync", "time"] }
+tracing = { workspace = true, features = ["log"] }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }
+serde_json = { workspace = true }
+tempfile = { workspace = true }

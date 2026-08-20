@@ -1,0 +1,33 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "bd3-memories-extension"
+version.workspace = true
+
+[lib]
+name = "bd3_memories_extension"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+bd3-core = { workspace = true }
+bd3-extension-api = { workspace = true }
+bd3-features = { workspace = true }
+bd3-otel = { workspace = true }
+bd3-tools = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }
+bd3-utils-output-truncation = { workspace = true }
+bd3-utils-template = { workspace = true }
+schemars = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true, features = ["fs"] }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }
+tempfile = { workspace = true }
+tokio = { workspace = true, features = ["fs", "macros"] }

@@ -1,0 +1,18 @@
+[package]
+name = "bd3-thread-manager-sample"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+clap = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+# Keep this sample limited to a single Bd3 workspace dependency.
+# Add new Bd3 surface area to `bd3-core-api` instead of depending on
+# additional `bd3-*` crates here.
+bd3-core-api = { workspace = true }
+tracing = { workspace = true }

@@ -1,0 +1,26 @@
+
+[package]
+edition.workspace = true
+license.workspace = true
+name = "bd3-utils-plugins"
+version.workspace = true
+
+[lib]
+doctest = false
+name = "bd3_utils_plugins"
+path = "src/lib.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+bd3-exec-server = { workspace = true }
+bd3-exec-server-protocol = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }
+bd3-utils-path-uri = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+tokio = { workspace = true, features = ["macros", "rt"] }

@@ -1,0 +1,21 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "bd3-memories-read"
+version.workspace = true
+
+[lib]
+name = "bd3_memories_read"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+bd3-protocol = { workspace = true }
+bd3-shell-command = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }

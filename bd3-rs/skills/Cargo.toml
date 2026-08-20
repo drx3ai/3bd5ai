@@ -1,0 +1,29 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "bd3-skills"
+version.workspace = true
+build = "build.rs"
+
+[lib]
+doctest = false
+name = "bd3_skills"
+path = "src/lib.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+bd3-protocol = { workspace = true }
+bd3-shell-command = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }
+bd3-utils-path-uri = { workspace = true }
+include_dir = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_yaml = { workspace = true }
+shlex = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }

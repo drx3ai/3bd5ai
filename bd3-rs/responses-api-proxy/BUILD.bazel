@@ -1,0 +1,6 @@
+load("//:defs.bzl", "bd3_rust_crate")
+
+bd3_rust_crate(
+    name = "responses-api-proxy",
+    crate_name = "bd3_responses_api_proxy",
+)

@@ -1,0 +1,18 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "bd3-context-fragments"
+version.workspace = true
+
+[lib]
+name = "bd3_context_fragments"
+path = "src/lib.rs"
+test = false
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+bd3-protocol = { workspace = true }
+bd3-utils-string = { workspace = true }

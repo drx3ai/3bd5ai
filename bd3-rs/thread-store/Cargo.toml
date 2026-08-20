@@ -1,0 +1,43 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "bd3-thread-store"
+version.workspace = true
+
+[lib]
+name = "bd3_thread_store"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+chrono = { workspace = true, features = ["serde"] }
+bd3-app-server-protocol = { workspace = true }
+bd3-extension-items = { workspace = true }
+bd3-git-utils = { workspace = true }
+bd3-install-context = { workspace = true }
+bd3-otel = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-rollout = { workspace = true }
+bd3-state = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }
+bd3-utils-path = { workspace = true }
+bd3-utils-path-uri = { workspace = true }
+futures = { workspace = true }
+pulldown-cmark = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+sqlx = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+zstd = { workspace = true }
+
+[dev-dependencies]
+bd3-utils-absolute-path = { workspace = true }
+pretty_assertions = { workspace = true }
+tempfile = { workspace = true }
+tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }
+uuid = { workspace = true }

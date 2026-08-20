@@ -1,0 +1,31 @@
+[package]
+name = "bd3-chatgpt"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+clap = { workspace = true, features = ["derive"] }
+bd3-connectors = { workspace = true }
+bd3-core = { workspace = true }
+bd3-git-utils = { workspace = true }
+bd3-http-client = { workspace = true }
+bd3-login = { workspace = true }
+bd3-model-provider = { workspace = true }
+bd3-plugin = { workspace = true }
+bd3-utils-cli = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+tokio = { workspace = true, features = ["full"] }
+
+[dev-dependencies]
+bd3-utils-cargo-bin = { workspace = true }
+pretty_assertions = { workspace = true }
+serde_json = { workspace = true }
+tempfile = { workspace = true }
+
+[lib]
+doctest = false

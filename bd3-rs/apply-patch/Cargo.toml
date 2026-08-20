@@ -1,0 +1,35 @@
+[package]
+name = "bd3-apply-patch"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+name = "bd3_apply_patch"
+path = "src/lib.rs"
+doctest = false
+
+[[bin]]
+name = "apply_patch"
+path = "src/main.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+bd3-exec-server = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }
+bd3-utils-path-uri = { workspace = true }
+similar = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true, features = ["macros", "rt"] }
+tree-sitter = { workspace = true }
+tree-sitter-bash = { workspace = true }
+
+[dev-dependencies]
+assert_cmd = { workspace = true }
+assert_matches = { workspace = true }
+bd3-utils-cargo-bin = { workspace = true }
+pretty_assertions = { workspace = true }
+tempfile = { workspace = true }

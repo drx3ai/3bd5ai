@@ -1,0 +1,10 @@
+load("//:defs.bzl", "bd3_rust_crate")
+
+bd3_rust_crate(
+    name = "goal",
+    compile_data = glob([
+        "templates/**",
+    ]),
+    crate_name = "bd3_goal_extension",
+    integration_compile_data_extra = ["src/accounting.rs"],
+)

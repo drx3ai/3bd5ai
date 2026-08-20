@@ -1,0 +1,6 @@
+load("//:defs.bzl", "bd3_rust_crate")
+
+bd3_rust_crate(
+    name = "sleep-inhibitor",
+    crate_name = "bd3_utils_sleep_inhibitor",
+)

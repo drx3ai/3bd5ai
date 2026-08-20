@@ -1,0 +1,24 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "bd3-connectors-extension"
+version.workspace = true
+
+[lib]
+name = "bd3_connectors_extension"
+path = "src/lib.rs"
+doctest = false
+test = false
+
+[lints]
+workspace = true
+
+[dependencies]
+bd3-connectors = { workspace = true }
+bd3-core-plugins = { workspace = true }
+bd3-file-system = { workspace = true }
+bd3-plugin = { workspace = true }
+bd3-utils-path-uri = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }

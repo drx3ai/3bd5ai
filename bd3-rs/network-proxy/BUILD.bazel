@@ -1,0 +1,6 @@
+load("//:defs.bzl", "bd3_rust_crate")
+
+bd3_rust_crate(
+    name = "network-proxy",
+    crate_name = "bd3_network_proxy",
+)

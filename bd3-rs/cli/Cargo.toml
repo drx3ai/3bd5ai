@@ -1,0 +1,129 @@
+[package]
+name = "bd3-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+build = "build.rs"
+default-run = "3bd"
+
+[[bin]]
+name = "3bd"
+path = "src/main.rs"
+
+[[bin]]
+name = "logs_client"
+path = "src/bin/logs_client.rs"
+
+[lib]
+name = "bd3_cli"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+chrono = { workspace = true }
+clap = { workspace = true, features = ["derive", "env"] }
+clap_complete = { workspace = true }
+bd3-app-server = { workspace = true }
+bd3-app-server-daemon = { workspace = true }
+bd3-app-server-protocol = { workspace = true }
+bd3-app-server-test-client = { workspace = true }
+bd3-arg0 = { workspace = true }
+bd3-api = { workspace = true }
+bd3-chatgpt = { workspace = true }
+bd3-cloud-config = { workspace = true }
+bd3-cloud-tasks = { path = "../cloud-tasks" }
+bd3-utils-cli = { workspace = true }
+bd3-config = { workspace = true }
+bd3-core = { workspace = true }
+bd3-core-plugins = { workspace = true }
+bd3-history = { workspace = true }
+bd3-home = { workspace = true }
+bd3-http-client = { workspace = true }
+bd3-exec = { workspace = true }
+bd3-exec-server = { workspace = true }
+bd3-execpolicy = { workspace = true }
+bd3-extension-api = { workspace = true }
+bd3-features = { workspace = true }
+bd3-git-attribution = { workspace = true }
+bd3-git-utils = { workspace = true }
+bd3-install-context = { workspace = true }
+bd3-login = { workspace = true }
+bd3-memories-write = { workspace = true }
+bd3-mcp = { workspace = true }
+bd3-mcp-server = { workspace = true }
+bd3-model-provider = { workspace = true }
+bd3-models-manager = { workspace = true }
+bd3-plugin = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-responses-api-proxy = { workspace = true }
+bd3-rmcp-client = { workspace = true }
+bd3-rollout = { workspace = true }
+bd3-rollout-trace = { workspace = true }
+bd3-sandboxing = { workspace = true }
+bd3-skills-extension = { workspace = true }
+bd3-state = { workspace = true }
+bd3-stdio-to-uds = { workspace = true }
+bd3-terminal-detection = { workspace = true }
+bd3-thread-store = { workspace = true }
+bd3-tui = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }
+bd3-utils-path = { workspace = true }
+crossterm = { workspace = true }
+http = { workspace = true }
+libc = { workspace = true }
+os_info = { workspace = true }
+owo-colors = { workspace = true }
+regex-lite = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+supports-color = { workspace = true }
+sys-locale = { workspace = true }
+tempfile = { workspace = true }
+tokio = { workspace = true, features = [
+    "io-std",
+    "macros",
+    "net",
+    "process",
+    "rt-multi-thread",
+    "signal",
+    "time",
+] }
+toml = { workspace = true }
+tracing = { workspace = true }
+tracing-appender = { workspace = true }
+tracing-subscriber = { workspace = true }
+unicode-segmentation = { workspace = true }
+url = { workspace = true }
+which = { workspace = true }
+
+[target.'cfg(target_os = "windows")'.dependencies]
+bd3_windows_sandbox = { package = "bd3-windows-sandbox", path = "../windows-sandbox-rs" }
+windows-sys = { version = "0.52", features = [
+    "Win32_Foundation",
+    "Win32_Storage_Packaging_Appx",
+    "Win32_System_Console",
+    "Win32_System_Threading",
+] }
+
+[dev-dependencies]
+app_test_support = { workspace = true }
+assert_cmd = { workspace = true }
+assert_matches = { workspace = true }
+bd3-utils-cargo-bin = { workspace = true }
+futures = { workspace = true }
+insta = { workspace = true }
+predicates = { workspace = true }
+pretty_assertions = { workspace = true }
+sqlx = { workspace = true }
+tokio-tungstenite = { workspace = true }
+wiremock = { workspace = true }
+zstd = { workspace = true }
+
+[package.metadata.cargo-shear]
+# These Rust sources are intentionally Bazel-only macrobenchmarks rather than
+# Cargo targets.
+ignored-paths = ["e2e_benches/*.rs"]

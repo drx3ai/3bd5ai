@@ -1,0 +1,10 @@
+# Paths are matched exactly, relative to the repository root.
+# Keep this list short and limited to intentional large checked-in assets.
+
+.github/bd3-cli-splash.png
+MODULE.bazel.lock
+bd3-rs/app-server-protocol/schema/json/bd3_app_server_protocol.schemas.json
+bd3-rs/app-server-protocol/schema/json/bd3_app_server_protocol.v2.schemas.json
+bd3-rs/tui/tests/fixtures/oss-story.jsonl
+bd3-rs/tui_app_server/tests/fixtures/oss-story.jsonl
+bd3-rs/tui/src/app.rs

@@ -1,0 +1,124 @@
+{
+  "outputs": {
+    "3bd": {
+      "platforms": {
+        "macos-aarch64": {
+          "regex": "^bd3-package-aarch64-apple-darwin\\.tar\\.zst$",
+          "path": "bin/3bd"
+        },
+        "macos-x86_64": {
+          "regex": "^bd3-package-x86_64-apple-darwin\\.tar\\.zst$",
+          "path": "bin/3bd"
+        },
+        "linux-x86_64": {
+          "regex": "^bd3-package-x86_64-unknown-linux-musl\\.tar\\.zst$",
+          "path": "bin/3bd"
+        },
+        "linux-aarch64": {
+          "regex": "^bd3-package-aarch64-unknown-linux-musl\\.tar\\.zst$",
+          "path": "bin/3bd"
+        },
+        "windows-x86_64": {
+          "regex": "^bd3-package-x86_64-pc-windows-msvc\\.tar\\.zst$",
+          "path": "bin/3bd.exe"
+        },
+        "windows-aarch64": {
+          "regex": "^bd3-package-aarch64-pc-windows-msvc\\.tar\\.zst$",
+          "path": "bin/3bd.exe"
+        }
+      }
+    },
+    "bd3-app-server": {
+      "platforms": {
+        "macos-aarch64": {
+          "regex": "^bd3-app-server-package-aarch64-apple-darwin\\.tar\\.zst$",
+          "path": "bin/bd3-app-server"
+        },
+        "macos-x86_64": {
+          "regex": "^bd3-app-server-package-x86_64-apple-darwin\\.tar\\.zst$",
+          "path": "bin/bd3-app-server"
+        },
+        "linux-x86_64": {
+          "regex": "^bd3-app-server-package-x86_64-unknown-linux-musl\\.tar\\.zst$",
+          "path": "bin/bd3-app-server"
+        },
+        "linux-aarch64": {
+          "regex": "^bd3-app-server-package-aarch64-unknown-linux-musl\\.tar\\.zst$",
+          "path": "bin/bd3-app-server"
+        },
+        "windows-x86_64": {
+          "regex": "^bd3-app-server-package-x86_64-pc-windows-msvc\\.tar\\.zst$",
+          "path": "bin/bd3-app-server.exe"
+        },
+        "windows-aarch64": {
+          "regex": "^bd3-app-server-package-aarch64-pc-windows-msvc\\.tar\\.zst$",
+          "path": "bin/bd3-app-server.exe"
+        }
+      }
+    },
+    "bd3-responses-api-proxy": {
+      "platforms": {
+        "macos-aarch64": {
+          "regex": "^bd3-responses-api-proxy-aarch64-apple-darwin\\.zst$",
+          "path": "bd3-responses-api-proxy"
+        },
+        "macos-x86_64": {
+          "regex": "^bd3-responses-api-proxy-x86_64-apple-darwin\\.zst$",
+          "path": "bd3-responses-api-proxy"
+        },
+        "linux-x86_64": {
+          "regex": "^bd3-responses-api-proxy-x86_64-unknown-linux-musl\\.zst$",
+          "path": "bd3-responses-api-proxy"
+        },
+        "linux-aarch64": {
+          "regex": "^bd3-responses-api-proxy-aarch64-unknown-linux-musl\\.zst$",
+          "path": "bd3-responses-api-proxy"
+        },
+        "windows-x86_64": {
+          "regex": "^bd3-responses-api-proxy-x86_64-pc-windows-msvc\\.exe\\.zst$",
+          "path": "bd3-responses-api-proxy.exe"
+        },
+        "windows-aarch64": {
+          "regex": "^bd3-responses-api-proxy-aarch64-pc-windows-msvc\\.exe\\.zst$",
+          "path": "bd3-responses-api-proxy.exe"
+        }
+      }
+    },
+    "bwrap": {
+      "platforms": {
+        "linux-x86_64": {
+          "regex": "^bwrap-x86_64-unknown-linux-musl\\.zst$",
+          "path": "bwrap"
+        },
+        "linux-aarch64": {
+          "regex": "^bwrap-aarch64-unknown-linux-musl\\.zst$",
+          "path": "bwrap"
+        }
+      }
+    },
+    "bd3-command-runner": {
+      "platforms": {
+        "windows-x86_64": {
+          "regex": "^bd3-command-runner-x86_64-pc-windows-msvc\\.exe\\.zst$",
+          "path": "bd3-command-runner.exe"
+        },
+        "windows-aarch64": {
+          "regex": "^bd3-command-runner-aarch64-pc-windows-msvc\\.exe\\.zst$",
+          "path": "bd3-command-runner.exe"
+        }
+      }
+    },
+    "bd3-windows-sandbox-setup": {
+      "platforms": {
+        "windows-x86_64": {
+          "regex": "^bd3-windows-sandbox-setup-x86_64-pc-windows-msvc\\.exe\\.zst$",
+          "path": "bd3-windows-sandbox-setup.exe"
+        },
+        "windows-aarch64": {
+          "regex": "^bd3-windows-sandbox-setup-aarch64-pc-windows-msvc\\.exe\\.zst$",
+          "path": "bd3-windows-sandbox-setup.exe"
+        }
+      }
+    }
+  }
+}

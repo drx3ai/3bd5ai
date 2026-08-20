@@ -1,0 +1,48 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "bd3-skills-extension"
+version.workspace = true
+
+[lib]
+name = "bd3_skills_extension"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+bd3-analytics = { workspace = true }
+bd3-config = { workspace = true }
+bd3-exec-server = { workspace = true }
+bd3-extension-api = { workspace = true }
+bd3-mcp = { workspace = true }
+bd3-otel = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-skills = { workspace = true }
+bd3-tools = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }
+bd3-utils-path-uri = { workspace = true }
+bd3-utils-plugins = { workspace = true }
+bd3-utils-string = { workspace = true }
+dirs = { workspace = true }
+futures = { workspace = true }
+schemars = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+serde_yaml = { workspace = true }
+tokio = { workspace = true, features = ["sync", "time"] }
+toml = { workspace = true }
+tracing = { workspace = true }
+url = { workspace = true }
+
+[dev-dependencies]
+bd3-models-manager = { workspace = true }
+bd3-utils-cargo-bin = { workspace = true }
+dunce = { workspace = true }
+insta = { workspace = true }
+opentelemetry_sdk = { workspace = true }
+pretty_assertions = { workspace = true }
+tempfile = { workspace = true }
+tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }

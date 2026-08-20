@@ -1,0 +1,40 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "bd3-tools"
+version.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+bitflags = { workspace = true }
+bd3-code-mode = { workspace = true }
+bd3-connectors = { workspace = true }
+bd3-features = { workspace = true }
+bd3-file-system = { workspace = true }
+bd3-extension-items = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }
+bd3-utils-output-truncation = { workspace = true }
+bd3-utils-pty = { workspace = true }
+bd3-utils-string = { workspace = true }
+jsonptr = { workspace = true }
+rmcp = { workspace = true, default-features = false, features = [
+    "base64",
+    "macros",
+    "schemars",
+    "server",
+] }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true, features = ["raw_value"] }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+urlencoding = { workspace = true }
+
+[dev-dependencies]
+bd3-utils-cargo-bin = { workspace = true }
+pretty_assertions = { workspace = true }
+
+[lib]
+doctest = false

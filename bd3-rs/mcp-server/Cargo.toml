@@ -1,0 +1,60 @@
+[package]
+name = "bd3-mcp-server"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "bd3-mcp-server"
+path = "src/main.rs"
+
+[lib]
+name = "bd3_mcp_server"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+bd3-arg0 = { workspace = true }
+bd3-config = { workspace = true }
+bd3-core = { workspace = true }
+bd3-home = { workspace = true }
+bd3-image-generation-extension = { workspace = true }
+bd3-exec-server = { workspace = true }
+bd3-extension-api = { workspace = true }
+bd3-features = { workspace = true }
+bd3-git-attribution = { workspace = true }
+bd3-login = { workspace = true }
+bd3-otel = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-skills-extension = { workspace = true }
+bd3-utils-cli = { workspace = true }
+bd3-utils-json-to-toml = { workspace = true }
+rmcp = { workspace = true }
+schemars = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+shlex = { workspace = true }
+tokio = { workspace = true, features = [
+    "io-std",
+    "macros",
+    "process",
+    "rt-multi-thread",
+    "signal",
+] }
+tracing = { workspace = true, features = ["log"] }
+tracing-subscriber = { workspace = true, features = ["env-filter", "fmt"] }
+
+[dev-dependencies]
+app_test_support = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }
+bd3-shell-command = { workspace = true }
+core_test_support = { workspace = true }
+mcp_test_support = { workspace = true }
+os_info = { workspace = true }
+pretty_assertions = { workspace = true }
+tempfile = { workspace = true }
+wiremock = { workspace = true }

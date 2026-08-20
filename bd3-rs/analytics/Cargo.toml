@@ -1,0 +1,35 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "bd3-analytics"
+version.workspace = true
+
+[lib]
+doctest = false
+name = "bd3_analytics"
+path = "src/lib.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+bd3-app-server-protocol = { workspace = true }
+bd3-git-utils = { workspace = true }
+bd3-login = { workspace = true }
+bd3-model-provider = { workspace = true }
+bd3-plugin = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-state = { workspace = true }
+os_info = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+sha1 = { workspace = true }
+tokio = { workspace = true, features = [
+    "macros",
+    "rt-multi-thread",
+] }
+tracing = { workspace = true, features = ["log"] }
+
+[dev-dependencies]
+bd3-utils-absolute-path = { workspace = true }
+pretty_assertions = { workspace = true }

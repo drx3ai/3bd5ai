@@ -1,0 +1,10 @@
+load("//:defs.bzl", "bd3_rust_crate")
+
+bd3_rust_crate(
+    name = "shell-command",
+    compile_data = [
+        "src/command_safety/fixtures/powershell_lowering.json",
+        "src/command_safety/powershell_parser.ps1",
+    ],
+    crate_name = "bd3_shell_command",
+)

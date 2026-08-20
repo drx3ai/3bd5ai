@@ -1,0 +1,55 @@
+[package]
+name = "core_test_support"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+path = "lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+assert_cmd = { workspace = true }
+base64 = { workspace = true }
+bd3-arg0 = { workspace = true }
+bd3-config = { workspace = true }
+bd3-core = { workspace = true }
+bd3-extension-api = { workspace = true }
+bd3-exec-server = { workspace = true }
+bd3-home = { workspace = true }
+bd3-features = { workspace = true }
+bd3-hooks = { workspace = true }
+bd3-login = { workspace = true }
+bd3-model-provider-info = { workspace = true }
+bd3-models-manager = { workspace = true }
+bd3-protocol = { workspace = true }
+bd3-thread-store = { workspace = true }
+bd3-utils-absolute-path = { workspace = true }
+bd3-utils-cargo-bin = { workspace = true }
+bd3-utils-path-uri = { workspace = true }
+ctor = { workspace = true }
+futures = { workspace = true }
+notify = { workspace = true }
+opentelemetry = { workspace = true }
+opentelemetry_sdk = { workspace = true }
+regex-lite = { workspace = true }
+serde_json = { workspace = true }
+similar = { workspace = true }
+tempfile = { workspace = true }
+tokio = { workspace = true, features = ["net", "test-util", "time"] }
+tokio-tungstenite = { workspace = true }
+tracing = { workspace = true }
+tracing-opentelemetry = { workspace = true }
+tracing-subscriber = { workspace = true }
+walkdir = { workspace = true }
+wiremock = { workspace = true }
+shlex = { workspace = true }
+zstd = { workspace = true }
+
+[dev-dependencies]
+bd3-http-client = { workspace = true }
+pretty_assertions = { workspace = true }
